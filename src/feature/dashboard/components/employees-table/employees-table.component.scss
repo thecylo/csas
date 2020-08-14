@@ -1,0 +1,30 @@
+.iconMdsp {
+  font-size: 20px;
+  cursor: pointer;
+}
+.iconMdsp:hover {
+  color: #006fe6 !important;
+}
+.firstSpan {
+  padding-right: 0.5rem !important;
+}
+.secondSpan {
+  padding-left: 0.5rem !important;
+}
+th,
+td {
+  text-align: center !important;
+}
+.selectWrapper {
+  width: 5rem;
+  margin: auto;
+}
+
+.pager__page {
+  a {
+    color: #00497b !important;
+  }
+}
+.is-current a {
+  background-color: #bce4fa !important;
+}

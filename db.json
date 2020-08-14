@@ -1,0 +1,158 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "firstName": "Petr",
+      "lastName": "Doe",
+      "email": "petr.doe@dummy.com",
+      "department": "Information technologies"
+    },
+    {
+      "id": 4,
+      "firstName": "Zakariah",
+      "lastName": "Shannon",
+      "department": "Corporate Technologies",
+      "email": "zakariah.shannon@dummy.com"
+    },
+    {
+      "id": 5,
+      "firstName": "Cari",
+      "lastName": "Chan",
+      "department": "Corporate Technologies",
+      "email": "cari.chan@dummy.com"
+    },
+    {
+      "id": 6,
+      "firstName": "Alicja",
+      "lastName": "Collier",
+      "department": "Corporate Technologies",
+      "email": "alicja.collier@dummy.com"
+    },
+    {
+      "id": 7,
+      "firstName": "Mea",
+      "lastName": "Gutierrez",
+      "email": "mea.gutierrez@dummy.com",
+      "department": "Marketing department"
+    },
+    {
+      "id": 8,
+      "firstName": "Abigail",
+      "lastName": "Coffey",
+      "department": "Corporate Technologies",
+      "email": "abigail.coffey@dummy.com"
+    },
+    {
+      "id": 9,
+      "firstName": "Shivani",
+      "lastName": "Langley",
+      "email": "shivani.langley@dummy.com",
+      "department": "Sales department"
+    },
+    {
+      "id": 10,
+      "firstName": "Ibrahim",
+      "lastName": "Elliss",
+      "email": "ibrahim.ellis@dummy.com",
+      "department": "Corporate Technologies"
+    },
+    {
+      "id": 11,
+      "firstName": "Keeleigh",
+      "lastName": "Branch",
+      "email": "keeleigh.branch@dummy.com",
+      "department": "Marketing department"
+    },
+    {
+      "id": 12,
+      "firstName": "Lester",
+      "lastName": "Fischer",
+      "department": "Corporate Technologies",
+      "email": "lester.fischer@dummy.com"
+    },
+    {
+      "id": 13,
+      "firstName": "Safwan",
+      "lastName": "Cousins",
+      "email": "safwan.cousins@dummy.com",
+      "department": "Sales department"
+    },
+    {
+      "id": 15,
+      "firstName": "Ravi",
+      "lastName": "Vang",
+      "department": "Corporate Technologies",
+      "email": "Ravi.Vang@dummy.com"
+    },
+    {
+      "id": 16,
+      "firstName": "Ralphie",
+      "lastName": "Gardner",
+      "department": "Corporate Technologies",
+      "email": "ralphie.gardner@dummy.com"
+    },
+    {
+      "id": 17,
+      "firstName": "Robin",
+      "lastName": "Brook",
+      "email": "robin.brook@dummy.com",
+      "department": "Sales department"
+    },
+    {
+      "id": 18,
+      "firstName": "Keziah",
+      "lastName": "Ramirez",
+      "email": "keziah.ramirez@dummy.com",
+      "department": "Marketing department"
+    },
+    {
+      "id": 19,
+      "firstName": "Alasdair",
+      "lastName": "Mcpherson",
+      "department": "Corporate Technologies",
+      "email": "alasdair.mcpherson@dummy.com"
+    },
+    {
+      "id": 20,
+      "firstName": "Liam",
+      "lastName": "Philip",
+      "email": "liam.philip@dummy.com",
+      "department": "Information technologies"
+    },
+    {
+      "id": 21,
+      "firstName": "Alan",
+      "lastName": "Johns",
+      "department": "Corporate Technologies",
+      "email": "alan.johns@dummy.com"
+    },
+    {
+      "id": 22,
+      "firstName": "Max",
+      "lastName": "Solomon",
+      "email": "max.solomon@dummy.com",
+      "department": "Sales department"
+    },
+    {
+      "id": 23,
+      "firstName": "Felix",
+      "lastName": "Horner",
+      "department": "Corporate Technologies",
+      "email": "felix.horner@dummy.com"
+    },
+    {
+      "id": 25,
+      "firstName": "Radek",
+      "lastName": "Marčan",
+      "email": "radek.marcan@dummy.com",
+      "department": "Chief executive officer"
+    },
+    {
+      "id": 26,
+      "firstName": "Santiago",
+      "lastName": "Aguar",
+      "email": "santiago.aguar@dummy.com",
+      "department": "Chief financiel officer"
+    }
+  ]
+}

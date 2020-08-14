@@ -1,0 +1,73 @@
+<form
+  novalidate=""
+  autocomplete="off"
+  class="form"
+  [formGroup]="employeeForm"
+  (ngSubmit)="submitForm()"
+>
+  <fieldset>
+    <div class="form__formGroup">
+      <div class="inputGroup inputGroup--smallmedium">
+        <label class="inputGroup__label is-required" for="firstName">
+          First name
+        </label>
+        <input
+          class="inputGroup__textInput"
+          type="text"
+          placeholder="first name"
+          id="firstName"
+          formControlName="firstName"
+        />
+      </div>
+      <div class="inputGroup inputGroup--smallmedium">
+        <label class="inputGroup__label is-required" for="lastName">
+          Last name
+        </label>
+        <input
+          class="inputGroup__textInput"
+          type="text"
+          placeholder="last name"
+          id="lastName"
+          formControlName="lastName"
+        />
+      </div>
+      <div class="inputGroup inputGroup--smallmedium">
+        <label class="inputGroup__label is-required" for="email">
+          Email
+        </label>
+        <input
+          class="inputGroup__textInput"
+          type="email"
+          placeholder="example@example.com"
+          id="email"
+          formControlName="email"
+        />
+      </div>
+      <div class="inputGroup inputGroup--smallmedium">
+        <label for="departmentSelector" class="inputGroup__label is-required"
+          >Choose department:</label
+        >
+        <div class="selectWrapper">
+          <select
+            id="departmentSelector"
+            class="inputGroup__select"
+            #departmentsSelector
+            formControlName="department"
+          >
+            <option value="">Please choose an option</option>
+            <option [value]="dep.value" *ngFor="let dep of departments | keyvalue"
+              >{{ dep.key }} - {{ dep.value }}</option
+            >
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="form__formGroup"></div>
+  </fieldset>
+  <div class="footer__buttons">
+    <button class="button--secondary" type="button" routerLink="/dashboard">Cancel</button>
+    <button class="button--primary" type="submit" [disabled]="!employeeForm.valid">
+      {{ btnMsg }}
+    </button>
+  </div>
+</form>

@@ -1,0 +1,9 @@
+<span style="font-size: 14px;">Filter by department: </span>
+<span
+  class="badge"
+  [id]="dep.key"
+  *ngFor="let dep of depTypes | keyvalue"
+  (click)="filter(dep.key)"
+>
+  {{ dep.value }}
+</span>

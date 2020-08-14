@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+@import '../mindsphere/css/files/css/mdsp-css.min.css';
+.appWrapper {
+  .appWrapper__regions,
+  .appWrapper__appBar {
+    padding-top: 6.25rem;
+    top: 0 !important;
+    left: 0 !important;
+    border-bottom: 1rem solid #00497b;
+    .mainRegion {
+      top: 6.25rem !important;
+    }
+  }
+}
+
+.button--primary {
+  background-color: #00497b !important;
+}
+.button--primary:hover {
+  background-color: #bce4fa !important;
+  color: #00497b !important;
+}
+.button--primary:disabled {
+  background-color: grey !important;
+}
+
+/* CUSTOM SCROLLBAR  */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

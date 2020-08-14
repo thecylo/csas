@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MindSphere css - stylesheet showcase</title>
+    <link rel="stylesheet" id="css-cdn" href="css/mdsp-css.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+    <div id="_mdspcontent" class="mdsp mdsp-defaults forceDefaultElements">
+<div class="appWrapper">
+
+    <div class="appWrapper__regions has-appBar has-contextRegion has-leadingRegion contextRegion-is-expanded leadingRegion-is-expanded appWrapper__regions--pushLayout">
+
+        <section class="leadingRegion">
+            <!-- content for leading region goes here -->
+        </section>
+
+        <section class="mainRegion">
+            <div class="contentHeader">
+                <div class="contentHeader__header">
+                    <h1 class="header__headline">Notification Demo</h1>
+                    <div class="header__subline">Will create a new notification every 5 seconds.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contextRegion">
+            <!-- content for context region goes here -->
+        </section>
+
+        <aside class="leadingRegionToggleArea">
+            <a href="#"></a>
+        </aside>
+
+        <aside class="contextRegionToggleArea">
+            <a href="#"></a>
+        </aside>
+
+    </div>
+
+    <ul class="appWrapper__appBar">
+        <!-- app bar items go here -->
+    </ul>
+
+
+    <div class="appWrapper__mobileToggle">
+        <a href="#" class="leadingRegionToggle is-activated button button--secondary">
+            <span class="iconMdsp sidebar" aria-hidden="true"></span>
+        </a>
+        <a href="#" class="contextRegionToggle is-activated button button--secondary">
+            <span class="iconMdsp sidebar" aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <!-- Notification markup START -->
+    <div class="notificationContainer">
+        <ul class="notifications">
+            <li class="notification is-warning">
+                <div class="notification__main">
+                    <h4 class="notification__title">
+                        Lorem ipsum
+                        <a class="notification__close" href="#" title="Close notification"></a>
+                    </h4>
+                    <div class="notification__content">
+                        We recommend the description to have a
+                        maximum length of 3 lines.
+                        Make sure that the notification provides
+                        enough information to help the user</div>
+                </div>
+            </li>
+            <li class="notification">
+                <div class="notification__main">
+                    <h4 class="notification__title">
+                        Another notification
+                        <a class="notification__close" href="#" title="Close notification"></a>
+                    </h4>
+                    <div class="notification__content">
+                        We recommend the description to have a
+                        maximum length of 3 lines.
+                        Make sure that the notification provides
+                        enough information to help the user</div>
+                </div>
+            </li>
+            <li class="notification is-alert">
+                <div class="notification__main">
+                    <h4 class="notification__title">
+                        Lorem ipsum
+                        <a class="notification__close" href="#" title="Close notification"></a>
+                    </h4>
+                    <div class="notification__content">
+                        We recommend the description to have a
+                        maximum length of 3 lines.
+                        Make sure that the notification provides
+                        enough information to help the user</div>
+                </div>
+                <div class="notification__details">
+                    <a href="#" class="details__expander">Show details</a>
+                    <div class="details__content">
+                        Lorem ipsum dolor sit amet following measurements show the dimensions for this component:
+                        <a href="#">A notification has</a> a maximal width of 320px.
+                    </div>
+                </div>
+            </li>
+            <li class="notification is-success">
+                <div class="notification__main">
+                    <h4 class="notification__title">
+                        Lorem ipsum
+                        <a class="notification__close" href="#" title="Close notification"></a>
+                    </h4>
+                    <div class="notification__content">
+                        We recommend the description to have a
+                        maximum length of 3 lines.
+                        Make sure that the notification provides
+                        enough information to help the user</div>
+                </div>
+                <div class="notification__details">
+                    <a href="#" class="details__expander">Show details</a>
+                    <div class="details__content">
+                        Lorem ipsum dolor sit amet following measurements show the dimensions for this component:
+                        A notification has a maximal width of 320px.
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- Notification markup END -->
+
+</div>
+
+
+<script type="text/javascript" src="https://static.eu1.mindsphere.io/osbar/v4/js/main.min.js"></script>
+
+<!-- ============================================================= -->
+<!-- JavaScript Code following is only for demonstrational purpose -->
+<!-- ============================================================= -->
+<script>
+    _msb.init({
+        title: "App Layout",
+        showLegal: true,
+        polyfills: {
+            promise: true
+        }
+    });
+    window.onload = function(e){
+        // sample JS for closing notifications
+        var close = document.querySelectorAll('.notification__close');
+        for (var i=0; i<close.length; i++) {
+            close[i].addEventListener('click', function(e) {
+                this.parentNode.parentNode.parentNode.classList.add('is-hidden');
+            });
+        }
+
+        // sample JS for expanding / collapsing notifications
+        var expand = document.querySelectorAll('.details__expander');
+        for (var i=0; i<expand.length; i++) {
+            expand[i].addEventListener('click', function(e) {
+                var node = this;
+                if (this.parentNode.classList.contains('is-expanded')) {
+                    node.textContent = node.textContent.replace("Hide", "Show");
+                } else {
+                    node.textContent = node.textContent.replace("Show", "Hide");
+                }
+                this.parentNode.classList.toggle('is-expanded');
+            });
+        }
+
+        // sample JS for creating new notifications every x seconds
+        setInterval(function() {
+            var notif = document.querySelectorAll('.notification');
+            var clone = notif[notif.length - 1].cloneNode(true);
+            notif[notif.length - 1].parentNode.insertBefore(clone, null);
+            clone.classList.remove('is-hidden');
+
+            // we need to manually add the events, again since they were not cloned
+            var close = clone.querySelector('.notification__close');
+            close.addEventListener('click', function(e) {
+                this.parentNode.parentNode.parentNode.classList.add('is-hidden');
+            });
+            var expand = clone.querySelector('.details__expander');
+            expand.addEventListener('click', function(e) {
+                this.parentNode.classList.toggle('is-expanded');
+            });
+            // IE 11 does not handle multiple classList assignments properly
+            clone.classList.remove('is-alert');
+            clone.classList.remove('is-warning');
+            clone.classList.remove('is-success');
+            clone.classList.remove('is-info');
+            var type = Math.floor(Math.random() * 4);
+            switch (type) {
+                case 0:
+                    clone.classList.add('is-warning');
+                    break;
+                case 1:
+                    clone.classList.add('is-alert');
+                    break;
+                case 2:
+                    clone.classList.add('is-success');
+                    break;
+                case 3:
+                    clone.classList.add('is-info');
+                    break;
+            }
+        }, 5000);
+    }
+</script>
+    </div>
+</body>
+</html>

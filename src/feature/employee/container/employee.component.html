@@ -1,0 +1,26 @@
+<div class="card">
+  <div class="card__header">
+    <ng-container *ngIf="id; else newEmpl">
+      <h1 class="header__headline">Employee detail</h1>
+      <p class="card__subline">
+        You can modify details of selected employee.
+      </p>
+    </ng-container>
+
+    <ng-template #newEmpl>
+      <h1 class="header__headline">Create new employee</h1>
+      <p class="card__subline">
+        Please provide all informations to create new employee
+      </p>
+    </ng-template>
+  </div>
+  <div class="card__content">
+    <app-employee-form
+      [employee]="employee"
+      [btnMsg]="btnMsg"
+      [view]="view"
+      (formValues)="createUpdate($event)"
+    ></app-employee-form>
+  </div>
+  <div class="card__footer"></div>
+</div>

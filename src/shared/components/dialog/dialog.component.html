@@ -1,0 +1,17 @@
+<div class="dialog is-shown dialog--confirm" [ngClass]="type">
+  <div class="dialog__overlay"></div>
+  <div class="dialog__container">
+    <div class="dialog__background">
+      <section class="dialog__content">
+        <h1 class="confirm__headline">{{ title }}</h1>
+        <p>
+          {{ message }}
+        </p>
+      </section>
+      <footer class="dialog__footer">
+        <a class="button button--secondary" (click)="close()">{{ buttons[0] }}</a>
+        <a class="button button--primary" (click)="save()">{{ buttons[1] }}</a>
+      </footer>
+    </div>
+  </div>
+</div>

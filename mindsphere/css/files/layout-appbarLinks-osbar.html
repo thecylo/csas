@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MindSphere css - stylesheet showcase</title>
+    <link rel="stylesheet" id="css-cdn" href="css/mdsp-css.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+    <div id="_mdspcontent" class="mdsp mdsp-defaults forceDefaultElements">
+<div class="appWrapper">
+
+    <div class="appWrapper__regions has-appBar has-contextRegion has-leadingRegion contextRegion-is-expanded leadingRegion-is-expanded appWrapper__regions--pushLayout">
+
+        <section class="leadingRegion">
+        <!-- content for leading region goes here -->
+        </section>
+
+        <section class="mainRegion">
+        <!-- content for main region goes here -->
+        </section>
+
+        <section class="contextRegion">
+        <!-- content for context region goes here -->
+        </section>
+
+        <aside class="leadingRegionToggleArea">
+            <a href="#"></a>
+        </aside>
+
+        <aside class="contextRegionToggleArea">
+            <a href="#"></a>
+        </aside>
+
+    </div>
+
+    <div class="appWrapper__appBar">
+        <a class="appBar__item" href="#">
+            <span class="iconMdsp person" aria-hidden="true"></span>
+            <span class="item__title">Lorem</span>
+        </a>
+        <a class="appBar__item is-activated" href="#">
+            <span class="iconMdsp calendarDay" aria-hidden="true"></span>
+            <span class="item__title">Ipsum</span>
+        </a>
+        <a class="appBar__item" href="#">
+            <span class="iconMdsp aspects" aria-hidden="true"></span>
+            <span class="item__title">Dolor sit</span>
+        </a>
+        <a class="appBar__item" href="#">
+            <span class="iconMdsp asset" aria-hidden="true"></span>
+            <span class="item__title">Amet tempor aliquam quctor</span>
+        </a>
+        <a class="appBar__item is-disabled" href="#">
+            <span class="iconMdsp calendar" aria-hidden="true"></span>
+            <span class="item__title">Morbi et lobortis lacus sed tempor</span>
+        </a>
+        <a class="appBar__item" href="#">
+            <span class="iconMdsp globalSettings" aria-hidden="true"></span>
+            <span class="item__title">Lobortis lacus sed tempor</span>
+        </a>
+    </div>
+
+    <div class="appWrapper__mobileToggle">
+        <a href="#" class="leadingRegionToggle is-activated button button--secondary">
+            <span class="iconMdsp sidebar" aria-hidden="true"></span>
+        </a>
+        <a href="#" class="contextRegionToggle is-activated button button--secondary">
+            <span class="iconMdsp sidebar" aria-hidden="true"></span>
+        </a>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="https://static.eu1.mindsphere.io/osbar/v4/js/main.min.js"></script>
+<script>
+    _msb.init({
+        title: "App Layout",
+        showLegal: true,
+        polyfills: {
+            promise: true
+        }
+    });
+
+    window.onload = function(e){
+        var leading = document.querySelectorAll("a.leadingRegionToggle, .leadingRegionToggleArea > a");
+        var context = document.querySelectorAll("a.contextRegionToggle, .contextRegionToggleArea > a");
+        var regionsWrapper = document.querySelector(".appWrapper__regions");
+
+        for (var i=0; i < leading.length; i++) {
+            leading[i].addEventListener('click', function(e) {
+                regionsWrapper.classList.toggle('leadingRegion-is-expanded');
+                for (var j=0; j<leading.length; j++) {
+                    leading[j].classList.toggle('is-activated');
+                }
+            });
+        }
+
+        for (var i=0; i < leading.length; i++) {
+            context[i].addEventListener('click', function(e) {
+                regionsWrapper.classList.toggle('contextRegion-is-expanded');
+                for (var j=0; j<context.length; j++) {
+                    context[j].classList.toggle('is-activated');
+                }
+            });
+        }
+
+        var switchLayoutType = document.querySelector("#toggleSlidingBehaviour");
+        switchLayoutType.addEventListener('click', function() {
+            regionsWrapper.classList.toggle('appWrapper__regions--pushLayout');
+        });
+
+        var toggleLeading = document.querySelector("#toggleLeadingRegionDemo");
+        toggleLeading.addEventListener('click', function() {
+            regionsWrapper.classList.toggle('has-leadingRegion');
+        });
+
+        var toggleContext = document.querySelector("#toggleContextRegionDemo");
+        toggleContext.addEventListener('click', function() {
+            regionsWrapper.classList.toggle('has-contextRegion');
+        });
+    }
+</script>
+    </div>
+</body>
+</html>

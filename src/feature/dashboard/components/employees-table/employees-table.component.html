@@ -1,0 +1,63 @@
+<table class="table table--alternate" *ngIf="employees?.length">
+  <thead>
+    <tr>
+      <th *ngFor="let header of headers">{{ header }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{ employee.id }}</td>
+      <td>{{ employee.firstName }}</td>
+      <td>{{ employee.lastName }}</td>
+      <td>{{ employee.department }}</td>
+      <td>{{ employee.email }}</td>
+      <td>
+        <span
+          aria-hidden="true"
+          class="iconMdsp audit firstSpan"
+          (click)="navigate(employee.id, true)"
+        ></span>
+        <span
+          aria-hidden="true"
+          (click)="navigate(employee.id, false)"
+          class="iconMdsp edit"
+        ></span>
+        <span
+          aria-hidden="true"
+          class="iconMdsp delete secondSpan"
+          (click)="remove(employee.id)"
+        ></span>
+      </td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>
+        <div class="pager">
+          <ul>
+            <li
+              class="pager__page"
+              *ngFor="let page of pagerPages"
+              [ngClass]="page === pager.currentPage && 'is-current'"
+            >
+              <a (click)="setPage(page, pageSize)" *ngIf="pager.totalPages > 1">{{ page }}</a>
+            </li>
+          </ul>
+        </div>
+      </td>
+      <td colspan="4"></td>
+      <td>
+        <div class="selectWrapper">
+          <select
+            id="flavour-select2"
+            class="inputGroup__select"
+            (change)="changePageSize(pageSizeSelector.value)"
+            #pageSizeSelector
+          >
+            <option [value]="option" *ngFor="let option of pageSizeOptions">{{ option }}</option>
+          </select>
+        </div>
+      </td>
+    </tr>
+  </tfoot>
+</table>
